@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171b2d">
+<title>Jesus and Me — Stories</title>
+<style>
+:root{--navy:#171b2d;--navy2:#222844;--gold:#e5c27a;--cream:#fff9ed;--muted:#c7c8d2;--ink:#202338}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#faf7f0;color:var(--ink);font-family:Georgia,'Nirmala UI','Noto Serif Telugu','Times New Roman',serif}button,input{font:inherit}button{cursor:pointer}
+header{background:rgba(23,27,45,.96);color:white;position:sticky;top:0;z-index:10;border-bottom:1px solid #ffffff20}
+.nav{max-width:1120px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{font-size:1.2rem;letter-spacing:.04em;color:var(--gold);font-weight:bold}.navlinks{display:flex;gap:18px;align-items:center}.navlinks a{color:#f8f4eb;text-decoration:none;font:500 .9rem Arial,sans-serif}.navlinks a:hover{color:var(--gold)}
+.hero{min-height:590px;background:linear-gradient(90deg,rgba(16,20,36,.94),rgba(16,20,36,.65),rgba(16,20,36,.18)),url('https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1800&q=85') center/cover;color:white;display:flex;align-items:center}.hero-inner{max-width:1120px;width:100%;margin:auto;padding:90px 24px}.eyebrow{text-transform:uppercase;letter-spacing:.22em;color:var(--gold);font:700 .75rem Arial,sans-serif}.hero h1{font-size:clamp(3.2rem,8vw,6.6rem);line-height:.98;margin:20px 0;max-width:750px;font-weight:normal}.hero p{font-size:1.2rem;line-height:1.7;max-width:640px;color:#f2eee8}.goldbtn{border:0;background:var(--gold);color:#202338;padding:14px 22px;border-radius:3px;font:700 .9rem Arial,sans-serif;letter-spacing:.03em;margin-top:14px}.goldbtn:hover{background:#f1d79b}
+.section{max-width:1120px;margin:auto;padding:76px 24px}.section-head{text-align:center;max-width:760px;margin:0 auto 38px}.section-head .eyebrow{color:#9b7533}.section h2{font-size:clamp(2rem,4vw,3rem);font-weight:normal;margin:12px 0}.section-head p{color:#686a76;line-height:1.7;font-size:1.04rem}
+.truths{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.truth{background:white;border:1px solid #e9e2d5;padding:26px;border-radius:8px}.truth .symbol{font-size:1.7rem;color:#b48b43}.truth h3{font-size:1.35rem;font-weight:normal;margin:12px 0}.truth p{font: .98rem/1.7 Arial,sans-serif;color:#676a75}.verse{background:#ece4d5;text-align:center;padding:45px 22px;color:#37364a}.verse blockquote{font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.5;max-width:850px;margin:0 auto 14px}.verse small{font: .82rem Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.chapters-wrap{background:#f0ece4}.chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.chapter{background:white;border-radius:8px;overflow:hidden;border:1px solid #e3ddd2;display:flex;flex-direction:column}.chapter-art{min-height:175px;background:linear-gradient(140deg,#252c48,#9b7844);color:#fff;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative}.chapter-art:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#171b2d55,transparent)}.chapter-art span{position:relative;z-index:1}.chapter-content{padding:22px;display:flex;flex-direction:column;flex:1}.chapter-no{font:700 .72rem Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#a27c39}.chapter h3{font-size:1.45rem;font-weight:normal;margin:10px 0}.chapter p{font: .94rem/1.65 Arial,sans-serif;color:#686a76;flex:1}.story-link{margin-top:12px;background:var(--navy);color:white;border:0;border-radius:4px;padding:12px 14px;text-align:left;display:flex;justify-content:space-between;align-items:center;font:600 .9rem Arial,sans-serif}.story-link:hover{background:#343b5e}
+footer{background:var(--navy);color:#e9e5dc;text-align:center;padding:35px 20px;font: .9rem/1.7 Arial,sans-serif}footer strong{color:var(--gold);font-family:Georgia,serif;font-size:1.1rem}
+.story-view{display:none;background:#121626;min-height:100vh;color:white}.story-top{position:sticky;top:0;z-index:4;background:#121626eF;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff20}.story-top h2{font-size:1.1rem;margin:0;font-weight:normal}.backbtn{background:transparent;border:1px solid #ffffff55;color:white;padding:9px 13px;border-radius:4px}.story-intro{text-align:center;padding:48px 20px 28px}.story-intro .eyebrow{color:var(--gold)}.story-intro h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:normal;margin:12px 0}.story-intro p{font:1rem/1.6 Arial,sans-serif;color:#c8cad3;max-width:620px;margin:auto}.slides{width:min(780px,100%);margin:0 auto;padding:0 16px 60px;display:flex;flex-direction:column;gap:18px}.slide{background:#202640;border:1px solid #ffffff20;border-radius:8px;overflow:hidden}.slide img{width:100%;display:block;max-height:850px;object-fit:contain;background:#151a2c}.slide-copy{padding:22px 24px}.slide-copy h3{font-size:1.5rem;font-weight:normal;margin:0 0 9px;color:var(--gold)}.slide-copy p{font:1rem/1.75 Arial,sans-serif;color:#e1e2e9;margin:0;white-space:pre-wrap}.story-end{text-align:center;color:#d4c5a4;padding:20px 20px 60px;font-style:italic}.edit-panel{width:min(780px,calc(100% - 32px));margin:0 auto 45px;padding:22px;background:#1c2239;border:1px solid #ffffff22;border-radius:8px}.edit-panel h3{font-size:1.25rem;font-weight:normal;margin-top:0}.edit-panel p,.edit-panel label{font: .9rem/1.6 Arial,sans-serif;color:#c8cad3}.edit-panel label{display:block;margin:13px 0 5px}.edit-panel input,.edit-panel textarea{width:100%;padding:11px;border:1px solid #555d79;border-radius:4px;background:#121626;color:white}.edit-panel textarea{min-height:75px;resize:vertical}.edit-panel .goldbtn{margin-right:8px}.smallbtn{background:transparent;color:#f4dca6;border:1px solid #9b8556;border-radius:3px;padding:12px 15px;margin-top:12px}.hint{font-size:.82rem!important;color:#aeb2c2!important}
+/* User-requested full dark mode and chapter-first home screen */
+body{background:#0b0e18;color:#f3f0e8}
+/* Keep the introduction about Jesus first, then the chapters, all in dark mode */
+#home main>.hero,#about,.verse{display:block}
+#about{color:#f3f0e8}
+#about .section-head p{color:#b8bdcc}
+.truth{background:#171c2d;border-color:#30374d;color:#f5f1e8}
+.truth h3{color:#f8f4eb}
+.truth p{color:#b8bdcc}
+.verse{background:#171c2d;color:#f3f0e8;border-top:1px solid #30374d;border-bottom:1px solid #30374d}
+.verse small{color:#e5c27a}
+#home header{background:rgba(11,14,24,.98)}
+.chapters-wrap{background:#0b0e18;min-height:calc(100vh - 70px);padding-top:46px}
+.section-head .eyebrow{color:var(--gold)}
+.section-head h2{color:#f8f4eb}
+.section-head p{color:#b8bdcc}
+.chapter{background:#171c2d;border-color:#30374d;color:#f5f1e8;box-shadow:0 12px 30px #00000022}
+.chapter-art{background:linear-gradient(140deg,#101629,#57452c)}
+.chapter-no{color:var(--gold)}
+.chapter h3{color:#f8f4eb}
+.chapter p{color:#b8bdcc}
+.story-link{background:#272f49;color:#fff}
+.story-link:hover{background:#3b4668}
+footer{background:#080b13}
+@media(max-width:760px){.nav{padding:13px 16px}.navlinks{gap:11px}.navlinks a{font-size:.78rem}.hero{min-height:520px}.hero-inner{padding:75px 22px}.truths,.chapters{grid-template-columns:1fr}.section{padding:58px 18px}.chapter-art{min-height:140px}.story-top{padding:12px}.story-intro{padding-top:35px}}
+.chapter{touch-action:manipulation}.chapter.favorited{border-color:#e5c27a}.favorite-heart{position:absolute;right:12px;top:10px;z-index:2;background:#171b2dcc;border:1px solid #e5c27a77;color:#e5c27a;border-radius:50%;width:38px;height:38px;font-size:23px}.fav-note{color:#c8cad3;font: .82rem/1.5 Arial,sans-serif;margin:8px 0 0}.feedback{max-width:780px;margin:0 auto 30px;padding:24px 18px;text-align:center;background:#1c2239;border:1px solid #ffffff25;border-radius:10px}.feedback h3{color:#e5c27a;font-weight:normal}.feedback button{background:#29314d;border:1px solid #ffffff55;border-radius:7px;color:white;padding:11px 15px;margin:5px}.feedback button.selected{color:#171b2d;background:#e5c27a;border-color:#e5c27a}.rating-stars button{font-size:29px;padding:6px 10px}.feedback-message{color:#d7c18d;font: .86rem Arial,sans-serif;min-height:20px}#favoritesOnly.active{border-color:#e5c27a;color:#e5c27a}
+.thoughts{max-width:850px;margin:0 auto;padding:55px 22px 65px}.thoughts h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:normal;color:#e5c27a;text-align:center}.thoughts .thought-sub{text-align:center;color:#b8bdcc;line-height:1.6}.thought-form{display:grid;gap:12px;margin:26px auto;max-width:680px}.thought-form input,.thought-form textarea{width:100%;border:1px solid #4a5269;border-radius:7px;padding:13px;background:#171c2d;color:#fff;font:1rem Arial,sans-serif}.thought-form textarea{min-height:110px;resize:vertical}.thought-form button{justify-self:start}.thought-list{max-width:680px;margin:auto;display:grid;gap:12px}.thought-card{padding:16px;background:#171c2d;border:1px solid #30374d;border-radius:9px;overflow-wrap:anywhere}.thought-card strong{color:#e5c27a}.thought-card small{color:#aeb2c2;margin-left:9px}.thought-card p{white-space:pre-wrap;line-height:1.6;margin-bottom:0}.thought-status{color:#d7c18d;font: .9rem Arial,sans-serif;min-height:1em}.thought-note{color:#aeb2c2;font:.83rem/1.5 Arial,sans-serif}
+</style>
+</head>
+<body>
+<div id="home">
+<header><nav class="nav"><div class="brand">✦ JESUS AND ME</div><div class="navlinks"><a href="#chapters" data-en="Chapters" data-te="అధ్యాయాలు">Chapters</a><button class="backbtn" id="favoritesOnly" onclick="toggleFavoritesView()">♡ Favorites</button><button class="backbtn" id="langToggle" onclick="toggleLanguage()" style="padding:8px 10px">తెలుగు</button></div></nav></header>
+<main>
+<section class="hero"><div class="hero-inner"><div class="eyebrow" data-en="Faith · Love · Hope" data-te="విశ్వాసం · ప్రేమ · నిరీక్షణ">Faith · Love · Hope</div><h1>Jesus<br>and Me</h1><p data-en="A journey through the life, love, and teachings of Jesus Christ — and the hope He brings to our world and to every heart." data-te="యేసుక్రీస్తు జీవితం, ప్రేమ, బోధనలు — మన ప్రపంచానికి, ప్రతి హృదయానికి ఆయన అందించే నిరీక్షణ గురించి ఒక ప్రయాణం.">A journey through the life, love, and teachings of Jesus Christ — and the hope He brings to our world and to every heart.</p><button class="goldbtn" onclick="document.getElementById('chapters').scrollIntoView({behavior:'smooth'})">EXPLORE THE CHAPTERS ↓</button></div></section>
+<section class="section" id="about"><div class="section-head"><div class="eyebrow" data-en="His story. His love." data-te="ఆయన కథ. ఆయన ప్రేమ.">His story. His love.</div><h2 data-en="What Jesus Has Done for This World" data-te="ఈ లోకం కోసం యేసు చేసినది">What Jesus Has Done for This World</h2><p data-en="Jesus showed the world God's love, taught forgiveness, cared for the suffering, welcomed those who were rejected, and brought hope to many people." data-te="యేసు ఈ లోకానికి దేవుని ప్రేమను చూపించారు, క్షమాపణను బోధించారు, బాధపడుతున్నవారిని ఆదరించారు, తిరస్కరించబడినవారిని స్వాగతించారు, అనేక మందికి నిరీక్షణను ఇచ్చారు.">Jesus showed the world God's love, taught forgiveness, cared for the suffering, welcomed those who were rejected, and brought hope to many people.</p></div></section>
+<section class="section chapters-wrap" id="chapters"><div class="section-head"><h2 data-en="Chapters" data-te="అధ్యాయాలు">Chapters</h2></div><p class="fav-note" id="favInstruction">Double-tap a chapter card to add or remove it from Favorites. You can also tap its heart.</p><div class="chapters" id="chapterGrid"></div></section>
+</main>
+<section class="thoughts" id="thoughts" aria-labelledby="thoughtsTitle">
+<h2 id="thoughtsTitle" data-en="Comments &amp; Share Your Thoughts" data-te="వ్యాఖ్యలు మరియు మీ ఆలోచనలు పంచుకోండి">Comments &amp; Share Your Thoughts</h2>
+<p class="thought-sub" data-en="What did you learn or feel while reading these stories? Leave your thoughts below." data-te="ఈ కథలు చదివిన తర్వాత మీకు ఏమి అనిపించింది? మీ ఆలోచనలను ఇక్కడ పంచుకోండి.">What did you learn or feel while reading these stories? Leave your thoughts below.</p>
+<form class="thought-form" id="thoughtForm" onsubmit="submitThought(event)">
+<input id="thoughtName" maxlength="60" required aria-label="Your name" placeholder="Your name / మీ పేరు">
+<textarea id="thoughtText" maxlength="1500" required aria-label="Your comment" placeholder="Share your thoughts... / మీ ఆలోచనలు రాయండి..."></textarea>
+<button class="goldbtn" type="submit" id="thoughtSubmit">Post Comment</button>
+<p class="thought-status" id="thoughtStatus" role="status" aria-live="polite"></p>
+<p class="thought-note" id="thoughtNote">Comments are saved only in this browser on this device. Other visitors cannot see them until a shared online comments database is connected.</p>
+</form>
+<div class="thought-list" id="thoughtList" aria-live="polite"></div>
+</section>
+<footer><strong>Jesus and Me</strong><br>A little space for faith, reflection, and hope.<br>“Let all that you do be done in love.” — 1 Corinthians 16:14</footer>
+</div>
+<div id="storyView" class="story-view">
+<div class="story-top"><button class="backbtn" onclick="goHome()">← Back to chapters</button><h2>✦ Jesus and Me</h2></div>
+<div class="story-language" style="display:flex;justify-content:center;gap:12px;padding:20px 15px 0"><button class="backbtn" id="storyEnglish" onclick="setStoryLanguage('en')">English slides</button><button class="backbtn" id="storyTelugu" onclick="setStoryLanguage('te')">తెలుగు స్లైడ్లు</button></div>
+<div class="story-intro"><div class="eyebrow" id="storyChapterNo">CHAPTER 1</div><h1 id="storyTitle">Jesus’ Love</h1><p id="storyDescription"></p></div>
+<div class="slides" id="slides"></div>
+<div class="feedback" id="chapterFeedback"><h3 id="feedbackTitle">Enjoyed this chapter?</h3><div class="rating-stars" id="ratingStars" aria-label="Rate this chapter from one to five stars"></div><div><button id="likeButton" onclick="toggleLike()">♡ Like</button><button id="favoriteStoryButton" onclick="toggleFavorite(activeChapter)">☆ Favorite</button><button onclick="shareChapter()">↗ Share</button></div><p class="feedback-message" id="feedbackMessage" aria-live="polite"></p></div><div class="story-end">May this story bring light, faith, and hope to your heart.</div>
+
+</div>
+<script>
+const chapterData = [
+ {no:1,title:"Jesus’ Love",teTitle:"యేసు ప్రేమ",desc:"Discover the love Jesus showed to the world.",teDesc:"యేసు ఈ లోకానికి చూపిన ప్రేమను తెలుసుకోండి.",icon:"♡",storyDesc:"Jesus welcomed the forgotten, cared for the hurting, and showed that love is meant to be lived."},
+ {no:2,title:"The Life of Jesus",teTitle:"యేసు జీవితం",desc:"Explore the moments that shaped His earthly life.",teDesc:"యేసు భూలోక జీవితంలోని ముఖ్య ఘట్టాలను తెలుసుకోండి.",icon:"✧",storyDesc:"From His birth to His ministry, the life of Jesus invites us to walk in faith and compassion."},
+ {no:3,title:"The Teachings of Jesus",teTitle:"యేసు బోధనలు",desc:"Wisdom for how we live and treat one another.",teDesc:"మన జీవితం, ఇతరులతో ప్రవర్తనకు మార్గదర్శకమైన జ్ఞానం.",icon:"☼",storyDesc:"Through parables and everyday encounters, Jesus taught forgiveness, humility, mercy, and love."},
+ {no:4,title:"The Miracles of Jesus",teTitle:"యేసు అద్భుతాలు",desc:"Stories of healing, faith, and wonder.",teDesc:"స్వస్థత, విశ్వాసం, అద్భుతాల కథలు.",icon:"✦",storyDesc:"The Gospel stories describe Jesus healing the sick, feeding the hungry, and bringing hope to people in need."},
+ {no:5,title:"The Cross and Resurrection",teTitle:"సిలువ మరియు పునరుత్థానం",desc:"Remember the heart of the Christian hope.",teDesc:"క్రైస్తవ నిరీక్షణకు కేంద్రబిందువును గుర్తుంచుకోండి.",icon:"†",storyDesc:"Christians believe Jesus gave His life for humanity and rose again, bringing the promise of new life."},
+ {no:6,title:"Following Jesus Today",teTitle:"నేడు యేసును అనుసరించడం",desc:"Put faith into action in everyday life.",teDesc:"రోజువారీ జీవితంలో విశ్వాసాన్ని ఆచరణలో చూపండి.",icon:"➜",storyDesc:"Following Jesus can mean choosing kindness, standing up for others, forgiving, serving, and living with hope."}
+];
+// MANUAL GITHUB SLIDE UPLOAD GUIDE:
+// 1) In your GitHub repository, create an images folder and upload your slide photos there.
+// 2) Use the relative path, for example: image: "images/good-samaritan-1.jpg"
+// 3) Add/edit slide objects in builtInEnglishSlides (English) and builtInTeluguSlides (Telugu).
+// 4) Save/commit index.html. GitHub Pages will publish the changes automatically.
+// Keep image filenames simple (lowercase, hyphens; avoid spaces).
+const builtInEnglishSlides = {
+ "1": [
+  {heading:"Jesus Welcomes Everyone", text:"Jesus showed love and compassion to people from every walk of life.", image:""},
+  {heading:"The Good Samaritan", text:"Jesus taught that we should show mercy and help people in need. (Luke 10:25–37)", image:""},
+  {heading:"Put Love into Action", text:"We can live out love by forgiving others, caring for people who are hurting, and offering practical help.", image:""}
+ ],
+ "2": [
+  {heading:"Born in Bethlehem", text:"The Gospels tell of Jesus’ birth in Bethlehem, a source of joy and hope for Christians. (Luke 2)", image:""},
+  {heading:"Jesus Teaches the People", text:"Jesus travelled through towns and villages, teaching about God’s kingdom and caring for people.", image:""},
+  {heading:"Jesus Calls His Disciples", text:"Jesus called disciples to follow Him, travel with Him, and learn from His words and actions.", image:""}
+ ],
+ "3": [
+  {heading:"The Sermon on the Mount", text:"Jesus taught about humility, mercy, peace, and righteousness. (Matthew 5–7)", image:""},
+  {heading:"Love Your Enemies", text:"Jesus taught people to love even those who oppose them. (Matthew 5:44)", image:""},
+  {heading:"Treat Others with Kindness", text:"Jesus taught us to treat others as we would like them to treat us. (Matthew 7:12)", image:""}
+ ],
+ "4": [
+  {heading:"Five Loaves and Two Fish", text:"The Gospels tell how Jesus fed a large crowd with five loaves and two fish. (John 6:1–14)", image:""},
+  {heading:"Jesus Calms the Storm", text:"When the disciples were afraid in a boat, the Gospels describe Jesus calming the wind and waves. (Mark 4:35–41)", image:""},
+  {heading:"Healing the Sick", text:"The Gospels describe Jesus healing people who were ill and showing compassion to those in need.", image:""}
+ ],
+ "5": [
+  {heading:"The Last Supper", text:"Before His crucifixion, Jesus shared a final meal with His disciples and taught them to remember Him. (Luke 22)", image:""},
+  {heading:"Jesus on the Cross", text:"The Gospels describe Jesus’ death on the cross, which holds central meaning in Christian faith.", image:""},
+  {heading:"The Resurrection", text:"Christians believe Jesus rose again on the third day. The resurrection is central to Christian hope. (1 Corinthians 15)", image:""}
+ ],
+ "6": [
+  {heading:"Love in Everyday Life", text:"We can follow Jesus’ teaching by speaking kindly and helping family, friends, and neighbours.", image:""},
+  {heading:"Learning to Forgive", text:"Forgiveness can be difficult, but Jesus taught people to seek forgiveness and peace.", image:""},
+  {heading:"Faith through Service", text:"Feeding the hungry, comforting the lonely, and helping people in need are ways to put faith into action.", image:""}
+ ]
+};
+
+const builtInTeluguSlides = {
+ "1": [
+  {
+   "heading": "ప్రేమతో అందరినీ ఆహ్వానించిన యేసు",
+   "text": "యేసు చిన్నవారిని, పేదవారిని, సమాజం పట్టించుకోని వారిని ప్రేమతో దగ్గరకు చేర్చుకున్నారు. ఆయన ప్రేమ అందరికీ అందుబాటులో ఉందని చూపించారు.",
+   "image": ""
+  },
+  {
+   "heading": "మంచి సమరయుని ఉపమానం",
+   "text": "గాయపడిన మనిషికి సహాయం చేసిన సమరయుని కథ ద్వారా, అవసరంలో ఉన్నవారికి కరుణ చూపాలని యేసు బోధించారు. (లూకా 10:25–37)",
+   "image": ""
+  },
+  {
+   "heading": "ప్రేమను ఆచరణలో చూపుదాం",
+   "text": "ఇతరులను క్షమించడం, బాధలో ఉన్నవారిని ఆదుకోవడం, మనకు సాధ్యమైన సహాయం చేయడం ద్వారా ప్రేమను చూపవచ్చు.",
+   "image": ""
+  }
+ ],
+ "2": [
+  {
+   "heading": "బేత్లెహేములో జననం",
+   "text": "సువార్తల ప్రకారం యేసు బేత్లెహేములో జన్మించారు. ఆయన జననం క్రైస్తవులకు ఆనందం, నిరీక్షణకు గుర్తు. (లూకా 2)",
+   "image": ""
+  },
+  {
+   "heading": "యేసు బోధనా సేవ",
+   "text": "యేసు గ్రామాలు, పట్టణాల్లో తిరుగుతూ దేవుని రాజ్యం గురించి బోధించారు. రోగులను ఆదరించి, ప్రజలకు ఉపమానాల ద్వారా బోధించారు.",
+   "image": ""
+  },
+  {
+   "heading": "శిష్యులను పిలిచిన యేసు",
+   "text": "యేసు తనను అనుసరించడానికి శిష్యులను పిలిచారు. వారు ఆయనతో కలిసి ప్రయాణించి, ఆయన మాటలను, పనులను చూశారు.",
+   "image": ""
+  }
+ ],
+ "3": [
+  {
+   "heading": "కొండమీది ప్రసంగం",
+   "text": "యేసు వినయం, దయ, శాంతి, నీతి గురించి బోధించారు. కొండమీది ప్రసంగం మత్తయి సువార్త 5–7 అధ్యాయాల్లో ఉంది.",
+   "image": ""
+  },
+  {
+   "heading": "శత్రువులను కూడా ప్రేమించండి",
+   "text": "మనల్ని ప్రేమించే వారినే కాకుండా మనకు వ్యతిరేకంగా ఉన్నవారిపట్ల కూడా ప్రేమ చూపాలని యేసు బోధించారు. (మత్తయి 5:44)",
+   "image": ""
+  },
+  {
+   "heading": "ఇతరులకు మేలు చేయండి",
+   "text": "ఇతరులు మనకు ఎలా ప్రవర్తించాలని కోరుకుంటామో, మనమూ వారికి అలాగే ప్రవర్తించాలని యేసు చెప్పారు. (మత్తయి 7:12)",
+   "image": ""
+  }
+ ],
+ "4": [
+  {
+   "heading": "ఐదు రొట్టెలు, రెండు చేపలు",
+   "text": "సువార్తల ప్రకారం యేసు ఐదు రొట్టెలు, రెండు చేపలతో పెద్ద జనసమూహానికి ఆహారం అందించారు. (యోహాను 6:1–14)",
+   "image": ""
+  },
+  {
+   "heading": "తుఫానును శాంతింపజేయడం",
+   "text": "పడవలో శిష్యులు భయపడినప్పుడు యేసు గాలిని, అలలను శాంతింపజేసినట్లు సువార్తలు చెబుతున్నాయి. (మార్కు 4:35–41)",
+   "image": ""
+  },
+  {
+   "heading": "రోగులను స్వస్థపరచడం",
+   "text": "సువార్తల్లో యేసు అనారోగ్యంతో బాధపడినవారిని స్వస్థపరచిన అనేక సంఘటనలు ఉన్నాయి. అవి ఆయన కరుణను చూపిస్తాయి.",
+   "image": ""
+  }
+ ],
+ "5": [
+  {
+   "heading": "చివరి భోజనం",
+   "text": "శిలువ వేయబడే ముందు యేసు తన శిష్యులతో చివరి భోజనం చేశారు. ఆయన తనను జ్ఞాపకం చేసుకోవాలని వారికి బోధించారు. (లూకా 22)",
+   "image": ""
+  },
+  {
+   "heading": "శిలువపై యేసు",
+   "text": "సువార్తల ప్రకారం యేసు శిలువపై మరణించారు. క్రైస్తవ విశ్వాసంలో ఆయన త్యాగానికి ప్రత్యేకమైన ప్రాముఖ్యత ఉంది.",
+   "image": ""
+  },
+  {
+   "heading": "పునరుత్థాన సందేశం",
+   "text": "మూడవ రోజున యేసు తిరిగి లేచారని క్రైస్తవులు విశ్వసిస్తారు. పునరుత్థానం వారి విశ్వాసానికి, నిరీక్షణకు కేంద్రం. (1 కొరింథీయులకు 15)",
+   "image": ""
+  }
+ ],
+ "6": [
+  {
+   "heading": "రోజువారీ జీవితంలో ప్రేమ",
+   "text": "మన కుటుంబం, స్నేహితులు, పొరుగువారితో దయగా మాట్లాడటం, సహాయం చేయడం ద్వారా యేసు బోధనలను ఆచరించవచ్చు.",
+   "image": ""
+  },
+  {
+   "heading": "క్షమించడం నేర్చుకుందాం",
+   "text": "మనకు బాధ కలిగించిన వారిని క్షమించడం సులభం కాకపోవచ్చు. అయినా క్షమాపణ, సమాధానం కోసం ప్రయత్నించాలని యేసు బోధించారు.",
+   "image": ""
+  },
+  {
+   "heading": "సేవలో విశ్వాసం",
+   "text": "ఆకలితో ఉన్నవారికి ఆహారం, ఒంటరిగా ఉన్నవారికి ఆదరణ, అవసరంలో ఉన్నవారికి సహాయం అందించడం విశ్వాసాన్ని ఆచరణలో చూపే మార్గాలు.",
+   "image": ""
+  }
+ ]
+};
+// SET THESE TWO VALUES BEFORE PUBLISHING. The anon/publishable key is safe for browser use.
+const SUPABASE_URL = 'PASTE_SUPABASE_PROJECT_URL_HERE';
+const SUPABASE_ANON_KEY = 'PASTE_SUPABASE_PUBLISHABLE_OR_ANON_KEY_HERE';
+const BUCKET = 'story-images';
+let activeChapter=1, currentLanguage='en', storyLanguage='en', storyRequest=0;
+const preferenceKey='jesusAndMePreferencesV1';
+let preferences={favorites:[],likes:[],ratings:{}};
+try{const stored=JSON.parse(localStorage.getItem(preferenceKey)||'{}');preferences={favorites:Array.isArray(stored.favorites)?stored.favorites:[],likes:Array.isArray(stored.likes)?stored.likes:[],ratings:stored.ratings&&typeof stored.ratings==='object'?stored.ratings:{}};}catch(e){}
+let favoritesView=false;
+function persistPreferences(){try{localStorage.setItem(preferenceKey,JSON.stringify(preferences));}catch(e){console.warn('Unable to save preferences',e);}}
+function isFavorite(no){return preferences.favorites.includes(no);}
+function toggleFavorite(no){preferences.favorites=isFavorite(no)?preferences.favorites.filter(x=>x!==no):[...preferences.favorites,no];persistPreferences();renderChapters();renderFeedback();}
+function toggleFavoritesView(){favoritesView=!favoritesView;renderChapters();document.getElementById('chapters').scrollIntoView({behavior:'smooth'});}
+function toggleLike(){preferences.likes=preferences.likes.includes(activeChapter)?preferences.likes.filter(x=>x!==activeChapter):[...preferences.likes,activeChapter];persistPreferences();renderFeedback();}
+function setRating(n){preferences.ratings[activeChapter]=n;persistPreferences();renderFeedback();}
+function renderFeedback(){const te=storyLanguage==='te',rating=Number(preferences.ratings[activeChapter])||0;document.getElementById('feedbackTitle').textContent=te?'ఈ అధ్యాయం మీకు నచ్చిందా?':'Enjoyed this chapter?';document.getElementById('ratingStars').innerHTML=Array.from({length:5},(_,i)=>`<button aria-label="${i+1} ${te?'నక్షత్రాలు':'stars'}" class="${i<rating?'selected':''}" onclick="setRating(${i+1})">${i<rating?'★':'☆'}</button>`).join('');const liked=preferences.likes.includes(activeChapter);document.getElementById('likeButton').textContent=(liked?'♥ ':'♡ ')+(te?'లైక్':'Like');document.getElementById('likeButton').classList.toggle('selected',liked);document.getElementById('favoriteStoryButton').textContent=(isFavorite(activeChapter)?'★ ':'☆ ')+(te?'ఇష్టమైనవి':'Favorite');document.getElementById('favoriteStoryButton').classList.toggle('selected',isFavorite(activeChapter));document.getElementById('feedbackMessage').textContent=rating?(te?`మీ రేటింగ్: ${rating}/5`:`Your rating: ${rating}/5`):'';}
+async function shareChapter(){const url=new URL(location.href);url.hash='chapter='+activeChapter+'&lang='+storyLanguage;const c=chapterData.find(x=>x.no===activeChapter);const title=storyLanguage==='te'?c.teTitle:c.title;try{if(navigator.share){await navigator.share({title:'Jesus and Me — '+title,url:url.href});return;}if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(url.href);document.getElementById('feedbackMessage').textContent=storyLanguage==='te'?'లింక్ కాపీ అయింది':'Link copied';return;}window.prompt('Copy this link',url.href);}catch(e){if(e.name!=='AbortError')document.getElementById('feedbackMessage').textContent='Unable to share this link';}}
+let lastTap={no:0,time:0};
+function handleChapterTap(e,no){if(e.target.closest('button'))return;const now=Date.now();if(lastTap.no===no&&now-lastTap.time<420){toggleFavorite(no);lastTap={no:0,time:0};}else lastTap={no,time:now};}
+
+const configured=()=>SUPABASE_URL.startsWith('https://') && !SUPABASE_ANON_KEY.startsWith('PASTE_');
+async function cloudGet(no,language){
+ if(!configured())return null;
+ const table=language==='te'?'story_translations':'stories';
+ const url=SUPABASE_URL.replace(/\/$/,'')+'/rest/v1/'+table+'?no=eq.'+no+'&select=no,title,description,slides';
+ const response=await fetch(url,{headers:{apikey:SUPABASE_ANON_KEY,Authorization:'Bearer '+SUPABASE_ANON_KEY}});
+ if(!response.ok)throw new Error('Unable to load published story');
+ const rows=await response.json();return rows[0]||null;
+}
+function renderChapters(){
+ const grid=document.getElementById('chapterGrid');
+ const chapters=favoritesView?chapterData.filter(c=>isFavorite(c.no)):chapterData;
+ document.getElementById('favoritesOnly').classList.toggle('active',favoritesView);
+ document.getElementById('favoritesOnly').textContent=favoritesView?(currentLanguage==='te'?'← అన్ని అధ్యాయాలు':'← All chapters'):(currentLanguage==='te'?'♡ ఇష్టమైనవి':'♡ Favorites');
+ document.getElementById('favInstruction').textContent=currentLanguage==='te'?'ఒక అధ్యాయాన్ని ఇష్టమైనవాటిలో చేర్చడానికి రెండుసార్లు నొక్కండి లేదా హృదయం గుర్తును నొక్కండి.':'Double-tap a chapter card to add or remove it from Favorites. You can also tap its heart.';
+ grid.innerHTML=chapters.length?chapters.map(c=>`<article class="chapter ${isFavorite(c.no)?'favorited':''}" ontouchend="handleChapterTap(event,${c.no})" ondblclick="if(!event.target.closest('button'))toggleFavorite(${c.no})"><div class="chapter-art"><span>${c.icon}</span><button class="favorite-heart" onclick="toggleFavorite(${c.no})" aria-label="Toggle favorite">${isFavorite(c.no)?'♥':'♡'}</button></div><div class="chapter-content"><div class="chapter-no">${currentLanguage==='te'?'అధ్యాయం':'Chapter'} ${c.no}</div><h3>${currentLanguage==='te'?(c.teTitle||c.title):c.title}</h3><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="story-link" style="flex:1;margin:0" onclick="openStory(${c.no},'en')"><span>English</span><span>↗</span></button><button class="story-link" style="flex:1;margin:0" onclick="openStory(${c.no},'te')"><span>తెలుగు</span><span>↗</span></button></div></div></article>`).join(''):`<p>${currentLanguage==='te'?'ఇంకా ఇష్టమైన అధ్యాయాలు లేవు.':'No favorite chapters yet. Tap a heart on a chapter to save it.'}</p>`;
+}
+
+async function openStory(no,language='en'){
+ const request=++storyRequest;activeChapter=no;storyLanguage=language;renderFeedback();
+ document.getElementById('storyEnglish').style.borderColor=language==='en'?'#e5c27a':'#ffffff55';
+ document.getElementById('storyTelugu').style.borderColor=language==='te'?'#e5c27a':'#ffffff55';
+ const c=chapterData.find(x=>x.no===no);
+ document.getElementById('home').style.display='none';
+ document.getElementById('storyView').style.display='block';
+ document.getElementById('storyChapterNo').textContent=(language==='te'?'అధ్యాయం ':'CHAPTER ')+no;
+ document.getElementById('storyTitle').textContent=language==='te'?c.teTitle:c.title;
+ document.getElementById('storyDescription').textContent=language==='te'?c.teDesc:c.storyDesc;
+ document.getElementById('slides').innerHTML='<p style="text-align:center;color:#c8cad3">Loading story…</p>';
+ window.scrollTo(0,0);
+ let saved=null;
+ try{saved=await cloudGet(no,language);}catch(e){console.warn(e);}
+ if(request!==storyRequest)return;
+ document.getElementById('storyTitle').textContent=saved?.title||(language==='te'?c.teTitle:c.title);
+ document.getElementById('storyDescription').textContent=saved?.description||(language==='te'?c.teDesc:c.storyDesc);
+ const slides=(saved?.slides?.length ? saved.slides : null)||((language==='te'?builtInTeluguSlides:no&&builtInEnglishSlides)[String(no)]||[]);
+ if(!slides.length){document.getElementById('slides').innerHTML='<p style="text-align:center;color:#c8cad3;padding:30px">'+(language==='te'?'ఈ అధ్యాయానికి తెలుగు స్లైడ్లు ఇంకా జోడించలేదు.':'No slides published yet.')+'</p>';return;}
+ renderSlides(slides);
+}
+function setStoryLanguage(language){openStory(activeChapter,language);}
+function renderSlides(items){
+ const el=document.getElementById('slides');
+ el.innerHTML=items.map((s,i)=>{
+  const url=typeof s.image==='string' && /^(https:\/\/|\/(?!\/)|\.?\.?\/|[A-Za-z0-9_-]+\/)/.test(s.image) && !/^\/\//.test(s.image) && !/^javascript:/i.test(s.image)?s.image:'';
+  return `<article class="slide">${url?`<img src="${escAttr(url)}" alt="${escAttr(s.heading||'Story slide '+(i+1))}" loading="lazy">`:`<div style="height:210px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#262e4a,#75603e);color:#e7ce95;font-size:2.5rem">✦</div>`}<div class="slide-copy"><h3>${esc(s.heading||'Story slide '+(i+1))}</h3><p>${esc(s.text||'')}</p></div></article>`;
+ }).join('');
+}
+function toggleLanguage(){
+ currentLanguage=currentLanguage==="en"?"te":"en";
+ document.documentElement.lang=currentLanguage==="te"?"te":"en";
+ document.getElementById("langToggle").textContent=currentLanguage==="en"?"తెలుగు":"English";
+ document.querySelectorAll("[data-en][data-te]").forEach(el=>el.textContent=currentLanguage==="te"?el.dataset.te:el.dataset.en);
+ renderChapters();
+ translateThoughts();
+}
+function goHome(){++storyRequest;document.getElementById('storyView').style.display='none';document.getElementById('home').style.display='block';renderChapters();document.getElementById('chapters').scrollIntoView({behavior:'smooth'});}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function escAttr(s){return esc(s).replace(/`/g,'&#96;');}
+const thoughtStorageKey='jesusAndMeSiteThoughtsV1';
+function getThoughts(){try{const data=JSON.parse(localStorage.getItem(thoughtStorageKey)||'[]');return Array.isArray(data)?data.slice(0,100):[];}catch(e){return [];}}
+function renderThoughts(){const items=getThoughts();document.getElementById('thoughtList').innerHTML=items.length?items.map(item=>`<article class="thought-card"><strong>${esc(item.name)}</strong><small>${esc(item.date)}</small><p>${esc(item.message)}</p></article>`).join(''):`<p class="thought-sub">${currentLanguage==='te'?'ఇంకా వ్యాఖ్యలు లేవు. మొదటి వ్యాఖ్య రాయండి.':'No comments yet. Be the first to share your thoughts.'}</p>`;}
+function submitThought(event){event.preventDefault();const name=document.getElementById('thoughtName').value.trim(),message=document.getElementById('thoughtText').value.trim();if(!name||!message)return;const items=getThoughts();items.unshift({name:name.slice(0,60),message:message.slice(0,1500),date:new Date().toLocaleDateString(currentLanguage==='te'?'te-IN':'en-IN')});try{localStorage.setItem(thoughtStorageKey,JSON.stringify(items.slice(0,100)));document.getElementById('thoughtForm').reset();document.getElementById('thoughtStatus').textContent=currentLanguage==='te'?'మీ వ్యాఖ్య ఈ బ్రౌజర్‌లో సేవ్ అయింది.':'Your comment was saved in this browser.';renderThoughts();}catch(e){document.getElementById('thoughtStatus').textContent=currentLanguage==='te'?'వ్యాఖ్య సేవ్ కాలేదు. బ్రౌజర్ నిల్వను తనిఖీ చేయండి.':'Could not save comment. Check browser storage.';}}
+function translateThoughts(){document.getElementById('thoughtSubmit').textContent=currentLanguage==='te'?'వ్యాఖ్యను పోస్ట్ చేయండి':'Post Comment';document.getElementById('thoughtNote').textContent=currentLanguage==='te'?'వ్యాఖ్యలు ఈ పరికరంలోని బ్రౌజర్‌లో మాత్రమే సేవ్ అవుతాయి. అందరికీ కనిపించాలంటే ఆన్‌లైన్ డేటాబేస్ అవసరం.':'Comments are saved only in this browser on this device. Other visitors cannot see them until a shared online comments database is connected.';renderThoughts();}
+renderThoughts();
+renderChapters();
+try{const match=location.hash.match(/chapter=(\d+)&lang=(en|te)/);if(match&&chapterData.some(c=>c.no===Number(match[1])))openStory(Number(match[1]),match[2]);}catch(e){}
+</script>
+</body>
+</html>
