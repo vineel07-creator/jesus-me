@@ -84,6 +84,45 @@ const chapterData = [
  {no:5,title:"The Cross and Resurrection",teTitle:"సిలువ మరియు పునరుత్థానం",desc:"Remember the heart of the Christian hope.",teDesc:"క్రైస్తవ నిరీక్షణకు కేంద్రబిందువును గుర్తుంచుకోండి.",icon:"†",storyDesc:"Christians believe Jesus gave His life for humanity and rose again, bringing the promise of new life."},
  {no:6,title:"Following Jesus Today",teTitle:"నేడు యేసును అనుసరించడం",desc:"Put faith into action in everyday life.",teDesc:"రోజువారీ జీవితంలో విశ్వాసాన్ని ఆచరణలో చూపండి.",icon:"➜",storyDesc:"Following Jesus can mean choosing kindness, standing up for others, forgiving, serving, and living with hope."}
 ];
+// MANUAL GITHUB SLIDE UPLOAD GUIDE:
+// 1) In your GitHub repository, create an images folder and upload your slide photos there.
+// 2) Use the relative path, for example: image: "images/good-samaritan-1.jpg"
+// 3) Add/edit slide objects in builtInEnglishSlides (English) and builtInTeluguSlides (Telugu).
+// 4) Save/commit index.html. GitHub Pages will publish the changes automatically.
+// Keep image filenames simple (lowercase, hyphens; avoid spaces).
+const builtInEnglishSlides = {
+ "1": [
+  {heading:"Jesus Welcomes Everyone", text:"Jesus showed love and compassion to people from every walk of life.", image:""},
+  {heading:"The Good Samaritan", text:"Jesus taught that we should show mercy and help people in need. (Luke 10:25–37)", image:""},
+  {heading:"Put Love into Action", text:"We can live out love by forgiving others, caring for people who are hurting, and offering practical help.", image:""}
+ ],
+ "2": [
+  {heading:"Born in Bethlehem", text:"The Gospels tell of Jesus’ birth in Bethlehem, a source of joy and hope for Christians. (Luke 2)", image:""},
+  {heading:"Jesus Teaches the People", text:"Jesus travelled through towns and villages, teaching about God’s kingdom and caring for people.", image:""},
+  {heading:"Jesus Calls His Disciples", text:"Jesus called disciples to follow Him, travel with Him, and learn from His words and actions.", image:""}
+ ],
+ "3": [
+  {heading:"The Sermon on the Mount", text:"Jesus taught about humility, mercy, peace, and righteousness. (Matthew 5–7)", image:""},
+  {heading:"Love Your Enemies", text:"Jesus taught people to love even those who oppose them. (Matthew 5:44)", image:""},
+  {heading:"Treat Others with Kindness", text:"Jesus taught us to treat others as we would like them to treat us. (Matthew 7:12)", image:""}
+ ],
+ "4": [
+  {heading:"Five Loaves and Two Fish", text:"The Gospels tell how Jesus fed a large crowd with five loaves and two fish. (John 6:1–14)", image:""},
+  {heading:"Jesus Calms the Storm", text:"When the disciples were afraid in a boat, the Gospels describe Jesus calming the wind and waves. (Mark 4:35–41)", image:""},
+  {heading:"Healing the Sick", text:"The Gospels describe Jesus healing people who were ill and showing compassion to those in need.", image:""}
+ ],
+ "5": [
+  {heading:"The Last Supper", text:"Before His crucifixion, Jesus shared a final meal with His disciples and taught them to remember Him. (Luke 22)", image:""},
+  {heading:"Jesus on the Cross", text:"The Gospels describe Jesus’ death on the cross, which holds central meaning in Christian faith.", image:""},
+  {heading:"The Resurrection", text:"Christians believe Jesus rose again on the third day. The resurrection is central to Christian hope. (1 Corinthians 15)", image:""}
+ ],
+ "6": [
+  {heading:"Love in Everyday Life", text:"We can follow Jesus’ teaching by speaking kindly and helping family, friends, and neighbours.", image:""},
+  {heading:"Learning to Forgive", text:"Forgiveness can be difficult, but Jesus taught people to seek forgiveness and peace.", image:""},
+  {heading:"Faith through Service", text:"Feeding the hungry, comforting the lonely, and helping people in need are ways to put faith into action.", image:""}
+ ]
+};
+
 const builtInTeluguSlides = {
  "1": [
   {
@@ -243,11 +282,7 @@ async function openStory(no,language='en'){
  if(request!==storyRequest)return;
  document.getElementById('storyTitle').textContent=saved?.title||(language==='te'?c.teTitle:c.title);
  document.getElementById('storyDescription').textContent=saved?.description||(language==='te'?c.teDesc:c.storyDesc);
- const slides=(saved?.slides?.length ? saved.slides : null)||(language==='te'?builtInTeluguSlides[no]:[
-  {heading:'A love that welcomes everyone',text:'Jesus showed care and compassion to people from every walk of life.',image:''},
-  {heading:'Love in action',text:'He taught us to serve others, forgive freely, and care for those in need.',image:''},
-  {heading:'A hope that lives on',text:'The message of Jesus continues to inspire people to live with faith, love, and hope.',image:''}
- ]);
+ const slides=(saved?.slides?.length ? saved.slides : null)||((language==='te'?builtInTeluguSlides:no&&builtInEnglishSlides)[String(no)]||[]);
  if(!slides.length){document.getElementById('slides').innerHTML='<p style="text-align:center;color:#c8cad3;padding:30px">'+(language==='te'?'ఈ అధ్యాయానికి తెలుగు స్లైడ్లు ఇంకా జోడించలేదు.':'No slides published yet.')+'</p>';return;}
  renderSlides(slides);
 }
@@ -255,7 +290,7 @@ function setStoryLanguage(language){openStory(activeChapter,language);}
 function renderSlides(items){
  const el=document.getElementById('slides');
  el.innerHTML=items.map((s,i)=>{
-  const url=typeof s.image==='string' && /^https:\/\//.test(s.image)?s.image:'';
+  const url=typeof s.image==='string' && /^(https:\/\/|\/(?!\/)|\.?\.?\/|[A-Za-z0-9_-]+\/)/.test(s.image) && !/^\/\//.test(s.image) && !/^javascript:/i.test(s.image)?s.image:'';
   return `<article class="slide">${url?`<img src="${escAttr(url)}" alt="${escAttr(s.heading||'Story slide '+(i+1))}" loading="lazy">`:`<div style="height:210px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#262e4a,#75603e);color:#e7ce95;font-size:2.5rem">✦</div>`}<div class="slide-copy"><h3>${esc(s.heading||'Story slide '+(i+1))}</h3><p>${esc(s.text||'')}</p></div></article>`;
  }).join('');
 }
